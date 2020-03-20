@@ -1,0 +1,19 @@
+using UnityEngine;
+using UnityEditor;
+using System.IO;
+
+namespace Ateo {
+
+
+[InitializeOnLoad]
+public class CheckForVersion
+{
+	public static float Version = 0f;
+
+	static CheckForVersion ()
+	{
+	}
+
+}
+
+}

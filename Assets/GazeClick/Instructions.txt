@@ -1,0 +1,82 @@
+GazeClick 
+Google VR / Google Cardboard Extension for Timed Reticle
+(c) 2018 Ateo GmbH
+
+GazeClick adds a simple timed click functionality to the Reticle from the GoogleVR Plugin for Unity.
+When the user looks at an interactive object, the timed cursor starts and as soon as the animation is finished, a click is simulated. 
+This enables completely gaze-controlled VR experiences without any additional input.
+
+Version 1.7 (Supports GoogleVR 1.7 or older).
+Fully tested with Unity 5.6
+Runs also in Unity 2017 and 2018 (but may need a little bit until it is all importet).
+—————
+
+Instructions:
+
+1) Import GazeClick Unitypackage
+2) Drag the GazeClick Prefab into the scene
+3) Done
+
+—————
+
+FAQ
+
+Q:	Can I change the color of the reticle or animation time?
+A:	Time and color settings are available on the GazeClick script on the GazeClick prefab and can be changed in the editor.
+
+Q:  Can I change the standard color of the reticle?
+A:  You can change it on the GvrReticleMaterial from the GoogleVR unity package.
+
+Q: 	I’m getting an error : “The type or namespace name ‘...Gvr...’ was not found.”
+A: 	GoogleVR Plugin is missing. Please import / reimport GoogleVRForUnity.
+
+Q: 	How do I set up GoogleVR with the reticle?
+A: 	Either duplicate the setup from the GoogleVR Demo scene or follow these Instructions from scratch:
+
+Version 1.3 and older
+
+	1) Import GoogleVR for Unity (Link: https://developers.google.com/vr/unity/)
+	2) Create an EventSystem and add the GazeInputModule (GoogleVR / Scripts / GazeInputModule) to it.
+	3) Be sure to have the GvrPointerManager script somewhere in your scene. It can be on an empty GameObject.
+	4) Put the GvrViewerMain Prefab (GoogleVR / Prefabs) into the scene
+	5) Drag the GvrReticle Prefab (GoogleVR / Prefabs / UI) onto the Main Camera
+
+Version 1.4 and newer
+	1) Import GoogleVR for Unity (Link: https://developers.google.com/vr/unity/)
+	2) Drag the GvrEventSystem into the scene (GoogleVR / Prefabs / UI)
+	3) Be sure to have the GvrControllerMain prefab in the scene (GoogleVR / Prefabs / Controller).
+	4) Put the GvrEditorEmulator Prefab (GoogleVR / Prefabs / UI) into the scene to help you test the scene
+	5) Drag the GvrReticlePointer Prefab (GoogleVR / Prefabs / UI) onto the Main Camera
+
+	Depending on your version of GoogleVR the names of some prefabs might vary. 
+	Check the Demoscenes under (GoogleVR / Demos / Scenes) to find the correct names.
+
+
+Q:  Can I make certain objects interactable (click and or hover), but in a way such that GazeClick will not automatically click them?
+A:  Sure you can use the IGvrGazeResponder interface on such objects. Our GazeClick will not react to such objects.
+
+Q:  Is ther a way to hide the Reticle when not looking at an interactable object?
+A:  Yes there is! In the GvrReticlePointer object in the GvrReticleMaterial change the A value of the color to 0 and change the "Reticle Growth Speed" to a higher value.
+    After that go to the GazeClick object and uncheck the "Use Original Color". If needed increase the "Time Before Rotation" and the "Rotation Duration" to get more time before a click.
+
+Q:	My GazeClick Reticle doesn’t behave properly, Animation doesn’t always play
+A:	Try changing / adjusting the “Precision” value in the Advanced Options to adjust the sensivity of the GazeClick Reticle
+
+Q:  I updated my GoogleVR version and GazeClick throws an error, what can I do?
+A:  Delete your Gazeclick folder and reimport (from the unity package) the newest Version of GazeClick.
+
+Q:  I just downloaded the newest version of GoogleVR and I get some errors using GazeClick.
+A:  If you are using a version of GoogleVR which is just some days old, it might be that GazeClick is not adapted to it yet.
+	Use an older version of GoogleVR for the time being and notify us via email, we might be allready working on an update.
+	You can find older Versions of GoogleVR here: https://github.com/googlevr/gvr-unity-sdk
+
+Q: I just downloaded the newest version of Unity and I get some errors using GazeClick.
+A: It can sometimes happen, that newer versions of unity have some bugs or that some older functions are no longer supported.
+   Use an older version of Unity for the time being and notify us via email, we might be allready working on an update.
+
+—————
+
+Thanks you for purchasing this asset!
+
+If you have any questions or need further assistance:
+support@ateo.ch

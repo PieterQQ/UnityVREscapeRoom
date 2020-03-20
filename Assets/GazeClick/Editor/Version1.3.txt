@@ -1,0 +1,61 @@
+using UnityEngine;
+using UnityEditor;
+using System.IO;
+
+namespace Ateo {
+
+
+[InitializeOnLoad]
+public class CheckForVersion
+{
+	public static float Version = 1.3f;
+
+ 
+
+	static CheckForVersion ()
+	{
+		#if !AutoClickDevelopment
+		if (float.Parse (GvrViewer.GVR_SDK_VERSION) < 1.1f) {
+
+			//string file = File.ReadAllText (System.IO.Path.Combine (Application.dataPath, "GazeClick/Implementation/GazeClick.cs"));
+			if (GazeClick.GazeClickVersion < 0) {	
+				string content = File.ReadAllText (System.IO.Path.Combine (Application.dataPath, "GazeClick/Implementation/Version1.0.txt"));
+				Debug.Log ("Google VR Version " + GvrViewer.GVR_SDK_VERSION + " found. Importing old GazeClick Version.");
+				File.WriteAllText (System.IO.Path.Combine (Application.dataPath, "GazeClick/Implementation/GazeClick.cs"), content);
+			}
+		} else if (float.Parse (GvrViewer.GVR_SDK_VERSION) < 1.2f) {
+
+			//string file = File.ReadAllText (System.IO.Path.Combine (Application.dataPath, "GazeClick/Implementation/GazeClick.cs"));
+			if (GazeClick.GazeClickVersion < 1) {	
+				string content = File.ReadAllText (System.IO.Path.Combine (Application.dataPath, "GazeClick/Implementation/Version1.1.txt"));
+				Debug.Log ("Google VR Version " + GvrViewer.GVR_SDK_VERSION + " found. Importing original GazeClick Version.");
+				File.WriteAllText (System.IO.Path.Combine (Application.dataPath, "GazeClick/Implementation/GazeClick.cs"), content);
+			}
+		} else if (float.Parse (GvrViewer.GVR_SDK_VERSION) < 1.3f) {
+			//string file = File.ReadAllText (System.IO.Path.Combine (Application.dataPath, "GazeClick/Implementation/GazeClick.cs"));
+			if (GazeClick.GazeClickVersion < 2) {	
+				string content = File.ReadAllText (System.IO.Path.Combine (Application.dataPath, "GazeClick/Implementation/Version1.2.txt"));
+				Debug.Log ("Google VR Version " + GvrViewer.GVR_SDK_VERSION + " found. Importing new GazeClick Version.");
+				File.WriteAllText (System.IO.Path.Combine (Application.dataPath, "GazeClick/Implementation/GazeClick.cs"), content);
+			}
+		} else if (float.Parse (GvrViewer.GVR_SDK_VERSION) < 1.4f) {
+			//string file = File.ReadAllText (System.IO.Path.Combine (Application.dataPath, "GazeClick/Implementation/GazeClick.cs"));
+			if (GazeClick.GazeClickVersion < 3) {	
+				string content = File.ReadAllText (System.IO.Path.Combine (Application.dataPath, "GazeClick/Implementation/Version1.3.txt"));
+				Debug.Log ("Google VR Version " + GvrViewer.GVR_SDK_VERSION + " found. Importing new GazeClick Version.");
+				File.WriteAllText (System.IO.Path.Combine (Application.dataPath, "GazeClick/Implementation/GazeClick.cs"), content);
+			}
+		} else {
+
+			//string file = File.ReadAllText (System.IO.Path.Combine (Application.dataPath, "GazeClick/Implementation/GazeClick.cs"));
+			if (GazeClick.GazeClickVersion < 3) {	
+				string content = File.ReadAllText (System.IO.Path.Combine (Application.dataPath, "GazeClick/Implementation/Version1.3.txt"));
+				Debug.Log ("Google VR Version " + GvrViewer.GVR_SDK_VERSION + " found. This version might not be supported yet.");
+				File.WriteAllText (System.IO.Path.Combine (Application.dataPath, "GazeClick/Implementation/GazeClick.cs"), content);
+			}
+		}
+		#endif
+	}
+}
+
+}

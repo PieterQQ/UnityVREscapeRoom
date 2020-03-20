@@ -1,0 +1,66 @@
+Here is a step by step instruction on what you should do:
+
+
+0. Have a running unity project (keep Unity open).
+
+1. Add Google VR to that Unity project. Here are the official instructions: https://developers.google.com/vr/unity/get-started
+   You can also find older versions of it here: https://github.com/googlevr/gvr-unity-sdk
+
+
+
+Alternatively here is what we do:
+
+
+1.1 Download the Google VR unity package from https://developers.google.com/vr/unity/download
+1.2 Double Click the GoogleVRForUnity.unitypackage after it is fully downloaded
+1.3 In Unity a window will open ask you if you want to import the package. Click import.
+1.4 After importing the files, Unity may open another window asking you if you want to import plugins. Import them.
+1.5 Make sure your project does not show any errors and the scene runs without incidents.
+
+
+
+FOR GVR VERSION 1.3 OR OLDER:
+
+
+Now you want to have a scene which has the required GoogleVR prefabs. Either copy or use the demo scene under GoogleVR/Demos/Scenes/GVRDemo or add the necessarily prefabs to your scene:
+
+1.6 Drag the GvrMain prefab (Under GoogleVR/Prefabs) into the scene (Hierarchy).
+1.7 Drag the GVRReticle prefab (Under GoogleVR/Prefabs/UI) into the scene (Hierarchy) place it directly under GVRMain/Head/Main Camera .
+1.8 If no GvrPointerManager script is in your scene add it to your GVRMain object. (This is needed to receive Click events).
+1.9 Make sure your project is working (running without errors) and you see a point/circle in the middle of the screen when running the prepared scene.
+1.10 Make sure the objects in your scene are clickable! (Either are buttons, or have EventTriggers for PointerClick or implement the interface IPointerClickHandler).
+
+
+FOR GVR VERSION 1.4 OR NEWER
+
+Now you want to have a scene which has the required GoogleVR prefabs. Either copy or use the demo scene under GoogleVR/Demos/Scenes/GVRDemo or add the necessarily prefabs to your scene:
+
+1.6 Drag the GvrControllerMain prefab (Under GoogleVR/Controller/Prefabs) into the scene (Hierarchy).
+1.7 Drag the GVRReticlePointer prefab (Under GoogleVR/Prefabs/UI) into the scene (Hierarchy) place it directly under GVRMain/Head/Main Camera .
+1.8 Drag the GvrEventSystem prefab (Under GoogleVR/Prefabs/UI) into the scene (Hierarchy).
+1.9 Drag the GvrEditorEmulator Prefab (Under GoogleVR / Prefabs / UI) into the scene (Hierarchy) (to help you test the scene).
+1.10 Make sure your project is working (running without errors) and you see a point/circle in the middle of the screen when running the prepared scene.
+1.11 Make sure the objects in your scene are clickable! (Either are buttons, or have EventTriggers for PointerClick or implement the interface IPointerClickHandler).
+
+(Some names of prefabs might be a bit different depending on version. Check the GoogleVR demo scenes to find the correct names).
+
+
+2. Add our plugin you the Unity project.
+2.1 Buy our plugin in the Unity Asset store under http://u3d.as/EPb
+2.2 Download the plugin.
+2.3 Import the plugin into unity. (Either through the Unity Asset Store tab or by double clicking the downloaded package.)
+2.4 Say yes to the import. (You should get a message in the "Console" in Unity saying GoogleVR version found.)
+2.5 Drag and drop the GazeClick prefab (directly in the folder GazeClick) into the hierarchy of your scene (it does not matter where).
+
+FOR UNITY 2017
+
+2.6 Wait a bit and or restart the scene if it is not working. It may take a while until the AssetDatabase is updated.
+
+
+3. Your done! You can now use the GazeClick in this scene. If you want it to work in another scene open the other scene and do steps 1.6, 1.7, 2.5.
+
+4. Use GazeClick / GoogleVR:
+4.1 Press the run button. 
+4.2 Press ALT (and keep it pressed) while moving your mouse to look around.
+4.3 Look on an interactive object (like a button).
+4.4 Keep looking on the same object (without too much movement) for a while to click it.
