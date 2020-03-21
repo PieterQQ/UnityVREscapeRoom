@@ -13,4 +13,5 @@ To interact with object , you have to gaze at it for at least 1.5 seconds
 Don't forget to turn on sound. Better to play in headphones
 
 # Some shots
-![alt text](https://ibb.co/R7KH49V)
+![Screenshot](https://user-images.githubusercontent.com/25612795/77223499-75c1ff00-6b5d-11ea-92ab-c5e74fa5773d.jpg)
+![Screenshot](https://user-images.githubusercontent.com/25612795/77223500-765a9580-6b5d-11ea-9a12-bccba9d2bd34.jpg)
