@@ -1,9 +1,9 @@
 # UnityVREscapeRoom
 Escape Room Game on Google Cardboards VR. It's a game about WWII. To leave a room, you have to solve 3 puzzles.
 # System Requirements
-Android 4.4+
-RAM 256MB
-Google Cardboards
+* Android 4.4+
+* RAM 256MB
+* Google Cardboards
 # How To Play
 ## Walking:
 You have to look down to move
