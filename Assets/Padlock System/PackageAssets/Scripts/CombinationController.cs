@@ -1,11 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class CombinationController : MonoBehaviour
 {
     [Header("Your Inputs")]
     [SerializeField] private string playerCombi;
     [SerializeField] private string yourCombination;
+    [SerializeField] private InputField canvas;
+
     private bool hasUnlocked;
 
     //Hiddie from the inspector because these are only integers to hold some information for later.
@@ -88,7 +91,7 @@ public class CombinationController : MonoBehaviour
 
         playerCombi = combinationRow1.ToString("0") + combinationRow2.ToString("0") + combinationRow3.ToString("0") + combinationRow4.ToString("0");
 
-        if (playerCombi == yourCombination)
+        if (canvas.text == yourCombination)
         {
             if (!hasUnlocked)
             {
